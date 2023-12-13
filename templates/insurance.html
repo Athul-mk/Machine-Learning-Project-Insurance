@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Insurance Prediction</h1>
+    <form method="POST" accept-charset="UTF-8"action="/predict">
+        <div class="row">
+            <div class="col-md-6 form-control">
+                <label><b>AGE :</b></label>
+                <input type="text" id="age"name="age">
+            </div>
+            <br>
+            <div class="col-md-6 form-control">
+                <form action="/action_page.php">
+                <br><br>
+                <label for="sex">SEX</label>
+                <select id="sex" name="sex">
+                    <option value="0">Male</option>
+                    <option value="1">Female</option>
+                </select>
+                <br><br><br>
+                <label for="smoker">SMOKER</label>
+                <select id="smoker" name="smoker">
+                    <option value="0">Yes</option>
+                    <option Value="1">No</option>
+                </select>
+                </form>
+            </div>
+            <br><br>
+            <div class="col-md-6 form-control">
+                <label><b>BMI :</b></label>
+                <input type="text" id="bmi" name="bmi">
+            </div>
+            <br><br>
+            <div class="col-md-6 form-control">
+                <label><b>CHILDREN :</b></label>
+                <input type="text" id="children" name="children">
+            </div>
+            <br><br>
+            <div class="col-md-12 form-control">
+                <input type="submit" class="btn-info" value="predict">
+            </div>
+        </div>
+    </form>
+    {% if predict %}
+        <p>The predicted value is: {{predict}}</p>
+    {% endif %}
+
+</body>
+</html>
